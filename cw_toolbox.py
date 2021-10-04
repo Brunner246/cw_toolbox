@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     elem_names_by_id = get_element_names_by_id(quiet=True)
     elem_ids_by_type_name = get_element_ids_by_type_name(quiet=True)
-    elem_ids_by_name = get_element_ids_by_name(preselected=None, quiet=None)
+    elem_ids_by_name = get_element_ids_by_name(quiet=True)
 
     from ptpython.repl import embed
 
