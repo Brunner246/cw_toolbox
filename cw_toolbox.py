@@ -73,7 +73,7 @@ if __name__ == "__main__":
     from cw_toolbox.helpers.repl import rq
     from ptpython.repl import embed
 
-    embed(globals(), locals())
+    ptp_repl = embed(globals(), locals())
 
     del(ptp_repl)
 
