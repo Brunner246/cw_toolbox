@@ -1,4 +1,3 @@
-import os
 import sys
 from pathlib import Path
 from pprint import pprint
@@ -70,11 +69,13 @@ print(f"INFO: found {len(elem_names_by_id) :5} elements in model\n")
 
 
 if __name__ == "__main__":
+    from cw_toolbox.helpers.collections import *
     from cw_toolbox.helpers.repl import rq
-    from cw_toolbox.helpers.visibility import isolate_elements
+    from cw_toolbox.helpers.visibility import *
+
     from ptpython.repl import embed
 
     ptp_repl = embed(globals(), locals())
-
+    # clean up after repl session:
     del(ptp_repl)
 
