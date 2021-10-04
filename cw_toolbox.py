@@ -59,6 +59,7 @@ print(f"INFO: found {len(all_ids) :5} elements in model\n")
 if __name__ == "__main__":
     from cw_toolbox.helpers.bbox import *
     from cw_toolbox.helpers.collections import *
+    from cw_toolbox.helpers.tag import *
     from cw_toolbox.helpers.repl import rq
     from cw_toolbox.helpers.visibility import *
 
