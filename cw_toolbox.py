@@ -53,19 +53,7 @@ selection_names = [ac.get_name(eid) for eid in selection]
 print(f"INFO: found {len(selection) :5} selected elements")
 
 all_ids = ec.get_all_identifiable_element_ids()
-
-elem_names_by_id = {}
-elem_ids_by_type = defaultdict(list)
-for elem_id in all_ids:
-    elem_name = ac.get_name(elem_id)
-    # print(elem_id, elem_name)
-    elem_names_by_id[elem_id] = elem_name
-    if ac.get_element_type(elem_id).is_floor():
-        elem_ids_by_type["floor"].append(elem_id)
-    elif ac.get_element_type(elem_id).is_wall():
-        elem_ids_by_type["wall"].append(elem_id)
-
-print(f"INFO: found {len(elem_names_by_id) :5} elements in model\n")
+print(f"INFO: found {len(all_ids) :5} elements in model\n")
 
 
 if __name__ == "__main__":
@@ -73,6 +61,10 @@ if __name__ == "__main__":
     from cw_toolbox.helpers.collections import *
     from cw_toolbox.helpers.repl import rq
     from cw_toolbox.helpers.visibility import *
+
+    elem_names_by_id = get_element_names_by_id(quiet=True)
+    elem_ids_by_type_name = get_element_ids_by_type_name(quiet=True)
+    elem_ids_by_name = get_element_ids_by_name(preselected=None, quiet=None)
 
     from ptpython.repl import embed
 

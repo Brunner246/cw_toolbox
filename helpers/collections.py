@@ -41,7 +41,7 @@ def get_element_names_by_id(preselected=None, quiet=None):
     return elem_names_by_id
 
 
-def get_element_ids_by_names(preselected=None, quiet=None):
+def get_element_ids_by_name(preselected=None, quiet=None):
     if not preselected:
         preselected = ec.get_all_identifiable_element_ids()
     elem_ids_by_name = defaultdict(list)
