@@ -5,6 +5,13 @@ import attribute_controller as ac
 
 
 def get_element_ids_by_type_name(preselected=None, quiet=None):
+    """
+    Collects element ids of all ids or preselected id set
+    into dictionary grouped by element type name.
+    :param preselected:
+    :param quiet:
+    :return:
+    """
     if not preselected:
         preselected = ec.get_all_identifiable_element_ids()
     elem_ids_by_type = defaultdict(list)
@@ -14,6 +21,8 @@ def get_element_ids_by_type_name(preselected=None, quiet=None):
             elem_ids_by_type["floor"].append(elem_id)
         elif ac.get_element_type(elem_id).is_wall():
             elem_ids_by_type["wall"].append(elem_id)
+        else:
+            elem_ids_by_type["not_specified"].append(elem_id)
 
     if not quiet:
         for elem_type_name, elem_ids in elem_ids_by_type.items():
@@ -26,6 +35,13 @@ def get_element_ids_by_type_name(preselected=None, quiet=None):
 
 
 def get_element_names_by_id(preselected=None, quiet=None):
+    """
+    Collects element names of all ids or preselected id set
+    into dictionary grouped by element id.
+    :param preselected:
+    :param quiet:
+    :return:
+    """
     if not preselected:
         preselected = ec.get_all_identifiable_element_ids()
     elem_names_by_id = {}
@@ -42,6 +58,13 @@ def get_element_names_by_id(preselected=None, quiet=None):
 
 
 def get_element_ids_by_name(preselected=None, quiet=None):
+    """
+    Collects element ids of all ids or preselected id set
+    into dictionary grouped by element name.
+    :param preselected:
+    :param quiet:
+    :return:
+    """
     if not preselected:
         preselected = ec.get_all_identifiable_element_ids()
     elem_ids_by_name = defaultdict(list)
