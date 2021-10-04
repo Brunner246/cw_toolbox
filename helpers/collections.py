@@ -9,7 +9,6 @@ def get_element_ids_by_type_name(preselected=None, quiet=None):
         preselected = ec.get_all_identifiable_element_ids()
     elem_ids_by_type = defaultdict(list)
     for elem_id in preselected:
-        # print(elem_id, elem_name)
         # TODO get type string generically
         if ac.get_element_type(elem_id).is_floor():
             elem_ids_by_type["floor"].append(elem_id)
@@ -48,14 +47,13 @@ def get_element_ids_by_names(preselected=None, quiet=None):
     elem_ids_by_name = defaultdict(list)
     for elem_id in preselected:
         elem_name = ac.get_name(elem_id)
-        # print(elem_id, elem_name)
         elem_ids_by_name[elem_name].append(elem_id)
 
     if not quiet:
-        for name, elem_ids in elem_ids_by_name.items():
+        for name in sorted(elem_ids_by_name.keys()):
             print(35 * "-")
-            print(f"{name} ({len(elem_ids)})\n")
-            for elem_id in elem_ids:
+            print(f"{name} ({len(elem_ids_by_name[name])})\n")
+            for elem_id in elem_ids_by_name[name]:
                 print(elem_id)
 
     return elem_ids_by_name
