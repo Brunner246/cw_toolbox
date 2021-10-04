@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 from pprint import pprint
@@ -69,7 +70,7 @@ print(f"INFO: found {len(elem_names_by_id) :5} elements in model\n")
 
 
 if __name__ == "__main__":
-    from .helpers.repl import start_repl
+    from cw_toolbox.helpers.repl import start_repl
 
     ptp_repl = start_repl()
 
