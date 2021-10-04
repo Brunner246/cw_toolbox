@@ -70,9 +70,10 @@ print(f"INFO: found {len(elem_names_by_id) :5} elements in model\n")
 
 
 if __name__ == "__main__":
-    from cw_toolbox.helpers.repl import start_repl
+    from cw_toolbox.helpers.repl import rq
+    from ptpython.repl import embed
 
-    ptp_repl = start_repl()
+    embed(globals(), locals())
 
     del(ptp_repl)
 
