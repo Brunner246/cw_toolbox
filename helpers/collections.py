@@ -3,6 +3,8 @@ from collections import defaultdict
 import element_controller   as ec
 import attribute_controller as ac
 
+from .param import get_element_type_info
+
 
 def get_element_ids_by_type_name(preselected=None, quiet=None):
     """
@@ -16,11 +18,9 @@ def get_element_ids_by_type_name(preselected=None, quiet=None):
         preselected = ec.get_all_identifiable_element_ids()
     elem_ids_by_type = defaultdict(list)
     for elem_id in preselected:
-        # TODO get type string generically
-        if ac.get_element_type(elem_id).is_floor():
-            elem_ids_by_type["floor"].append(elem_id)
-        elif ac.get_element_type(elem_id).is_wall():
-            elem_ids_by_type["wall"].append(elem_id)
+        type_info = get_element_type_info(elem_id)[0]
+        if type_info:
+            elem_ids_by_type[type_info].append(elem_id)
         else:
             elem_ids_by_type["not_specified"].append(elem_id)
 

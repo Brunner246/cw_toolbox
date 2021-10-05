@@ -5,6 +5,43 @@ import attribute_controller as ac
 import utility_controller   as uc
 
 
+def get_element_info(elem_id: int) -> dict:
+    """
+    Get a base set of element information
+    :param elem_id:
+    :return:
+    """
+    element_info = {
+        "id"       : elem_id,
+        "name"     : ac.get_name(elem_id),
+        "comment"  : ac.get_comment(elem_id),
+        "group"    : ac.get_group(elem_id),
+        "subgroup" : ac.get_subgroup(elem_id),
+    }
+    if get_element_type_info(elem_id):
+        element_info["type_info"] = get_element_type_info(elem_id)[0]
+    else:
+        element_info["type_info"] = ""
+    return element_info
+
+
+def get_element_type_info(elem_id: int) -> list:
+    """
+    Iterates over element type attributes to retrieve information
+    :param elem_id:
+    :return:
+    """
+    type_info = []
+    element_type = ac.get_element_type(elem_id)
+    for attr in dir(element_type):
+        if attr.startswith("is_"):
+            attr_value = getattr(element_type, attr)()
+            #print(attr, attr_value)
+            if attr_value:
+                type_info.append(attr[3:])
+    return type_info
+
+
 def get_element_user_attributes(elem_id: int) -> dict:
     """
     Returns a mapping of parameter name - value
