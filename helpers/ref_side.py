@@ -65,7 +65,7 @@ def set_ref_side_to_bottom(elem_id: int, ref_dir: cw.point_3d):
     if elem_zl != ref_dir:
         print(f"{elem_id} not yet at ref_side_to_bottom")
         gc.rotate_height_axis_90([elem_id])
-        set_ref_side_to_bottom(elem_id)
+        set_ref_side_to_bottom(elem_id, ref_dir)
     else:
         print(f"{elem_id} is already at ref_side_to_bottom")
         return
