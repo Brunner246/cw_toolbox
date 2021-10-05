@@ -27,10 +27,12 @@ def reset():
     vc.refresh()
 
 
-print(sys.version_info)
-print(sys.executable)
-for p in sys.path:
-    print(p)
+print("\nwelcome to cw_toolbox!!\n")
+print(f"{sys.version_info =}")
+print(f"{sys.executable =}")
+print("\ncurrent paths available to interpreter:")
+for path in sys.path:
+    print(f"INFO: {path =}")
 
 
 cwps = [
@@ -39,7 +41,7 @@ cwps = [
 ]
 for cwp in cwps:
     if cwp not in sys.path:
-        print(f"appending to path: {cwp}")
+        print(f"INFO: appending to path: {cwp}")
         sys.path.append(cwp)
 
 print("")
@@ -60,7 +62,7 @@ if __name__ == "__main__":
     from cw_toolbox.helpers.bbox import *
     from cw_toolbox.helpers.collections import *
     from cw_toolbox.helpers.param import *
-    from cw_toolbox.helpers.repl import rq
+    from cw_toolbox.helpers.repl import *
     from cw_toolbox.helpers.tag import *
     from cw_toolbox.helpers.visibility import *
 
