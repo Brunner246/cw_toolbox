@@ -11,6 +11,8 @@
   * repeat multi line statements in one go, not line by line
   * edit multi line statements
   * automatic doc strings (enable via `F2 - Display - Show docstring`)
+  * [and more](https://github.com/prompt-toolkit/ptpython#features)
+  * ...
 
 * cw_toolbox repl
   * prepopulated variables
