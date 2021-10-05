@@ -1,2 +1,1 @@
-colorful==0.5.4
 ptpython==3.0.16
