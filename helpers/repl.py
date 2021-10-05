@@ -1,5 +1,4 @@
 import sys
-from ptpython.repl import embed
 
 
 def rq():
@@ -7,13 +6,29 @@ def rq():
     shortcut to quit the repl
     :return:
     """
-    sys.exit()
+    quit_repl()
 
 
-def start_repl():
+def qr():
     """
-    starts ptpython repl
+    shortcut to quit the repl
     :return:
     """
-    return embed(globals(), locals())
+    quit_repl()
+
+
+def qq():
+    """
+    shortcut to quit the repl
+    :return:
+    """
+    quit_repl()
+
+
+def quit_repl():
+    """
+    shortcut to quit the repl
+    :return:
+    """
+    sys.exit()
 
