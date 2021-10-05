@@ -23,13 +23,16 @@ def get_element_user_attributes(elem_id: int) -> dict:
     return user_param_map
 
 
-def ensure_user_parameters(quiet=None) -> dict:
+def ensure_user_parameters(path_override=None, quiet=None) -> dict:
     """
     Ensures that the canonical mapping of user parameters
     according to a single source are set.
     :return:
     """
-    user_profile_path = Path(uc.get_3d_userprofil_path())
+    if path_override:
+        user_profile_path = Path(path_override)
+    else:
+        user_profile_path = Path(uc.get_3d_userprofil_path())
     company_user_profile_path = user_profile_path / "company_user_attributes.json"
     if not company_user_profile_path.exists():
         print(f"ERROR: Sorry {company_user_profile_path} seems to be missing")
