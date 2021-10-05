@@ -59,13 +59,17 @@ print(f"INFO: found {len(all_ids) :5} elements in model - available via: all_ids
 if __name__ == "__main__":
     from cw_toolbox.helpers.bbox import *
     from cw_toolbox.helpers.collections import *
-    from cw_toolbox.helpers.tag import *
+    from cw_toolbox.helpers.param import *
     from cw_toolbox.helpers.repl import rq
+    from cw_toolbox.helpers.tag import *
     from cw_toolbox.helpers.visibility import *
 
     elem_names_by_id = get_element_names_by_id(quiet=True)
-    elem_ids_by_type_name = get_element_ids_by_type_name(quiet=True)
     elem_ids_by_name = get_element_ids_by_name(quiet=True)
+    elem_ids_by_type_name = get_element_ids_by_type_name(quiet=True)
+
+    user_attribute_map_by_name = get_user_attribute_map_by_name()
+    user_attribute_map_by_id   = get_user_attribute_map_by_id()
 
     from ptpython.repl import embed
 
