@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginInfo>
+    <Version>1.0.0.0</Version>
+    <Date>2021-10-05</Date>
+    <Author>Frederic Beaupere</Author>
+    <Name>
+      <Text language="German">PtPython REPL</Text>
+      <Text language="English">PtPython REPL</Text>
+      <Text language="French"/>
+      <Text language="Italian"/>
+      <Text language="Spanish"/>
+      <Text language="Czech"/>
+      <Text language="Finnish"/>
+      <Text language="Russian"/>
+      <Text language="Polish"/>
+      <Text language="Romanian"/>
+      <Text language="Norwegian"/>
+      <Text language="Chinese"/>
+      <Text language="Portuguese"/>
+      <Text language="Estonian"/>
+      <Text language="Japanese"/>
+    </Name>
+	<!--Linefeed by addin <br/> in text-->
+    <Description>
+      <Text language="German">
+<![CDATA[
+Beginnt eine interaktive PtPython REPL Sitzung in cw Konsole. Nicht starten ohne cw Konsole.
+]]>
+      </Text>
+      <Text language="English">
+<![CDATA[
+Starts an interactive ptpyhon repl in cw console. Do not start without a console loaded.
+]]>
+      </Text>
+      <Text language="French"/>
+      <Text language="Italian"/>
+      <Text language="Spanish"/>
+      <Text language="Czech"/>
+      <Text language="Finnish"/>
+      <Text language="Russian"/>
+      <Text language="Polish"/>
+      <Text language="Romanian"/>
+      <Text language="Norwegian"/>
+      <Text language="Chinese"/>
+      <Text language="Portuguese"/>
+      <Text language="Estonian"/>
+      <Text language="Japanese"/>
+    </Description>
+</PluginInfo>
