@@ -32,8 +32,8 @@ def is_point_in_bbox(point: cw.point_3d, bbox: namedtuple) -> bool:
     :return:
     """
     x, y, z = point.x, point.y, point.z
-    bbx_max_x, bbx_max_y, bbx_max_z = bbox.max
-    bbx_min_x, bbx_min_y, bbx_min_z = bbox.min
+    bbx_max_x, bbx_max_y, bbx_max_z = [bbox.max.x, bbox.max.y, bbox.max.z]
+    bbx_min_x, bbx_min_y, bbx_min_z = [bbox.min.x, bbox.min.y, bbox.min.z]
     if bbx_max_x > x > bbx_min_x and \
        bbx_max_y > y > bbx_min_y and \
        bbx_max_z > z > bbx_min_z:
