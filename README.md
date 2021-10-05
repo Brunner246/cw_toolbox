@@ -51,8 +51,11 @@ repl and helper modules for comfortable interactive cw python sessions
   `{user_home} / .virtualenvs / cadwork / Lib" / "site-packages"`
 * Expects the dependencies listed in `requirements.txt` to be present in the above-mentioned virtualenv.
 
-## known limitations
+## known issues and limitations
 * Only works within a cw session with the console enabled
+* The console has a strange behaviour around pasting:
+  * mouse right-click works for pasting
+  * `Ctrl - v` `Ctrl - Shift - v` do not seem to work for pasting even with paste mode (`F6`) enabled
 * The repl in its current version is modal / blocking, meaning you cannot interact with cadwork meaningfully while the 
   repl is active - quit the repl via `sys.exit()` or `rq()`
 * Sometimes (~1%) it crashes cadwork - reason currently unknown
