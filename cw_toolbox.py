@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from pprint import pprint
+from pprint import pprint, pp
 from collections import namedtuple, defaultdict
 
 import cadwork                  as cw
@@ -50,10 +50,10 @@ if selection:
 if len(selection) > 1:
     s1 = selection[1]
 selection_names = [ac.get_name(eid) for eid in selection]
-print(f"INFO: found {len(selection) :5} selected elements")
+print(f"INFO: found {len(selection) :5} selected element - available via: selection")
 
 all_ids = ec.get_all_identifiable_element_ids()
-print(f"INFO: found {len(all_ids) :5} elements in model\n")
+print(f"INFO: found {len(all_ids) :5} elements in model - available via: all_ids\n")
 
 
 if __name__ == "__main__":
