@@ -70,6 +70,7 @@ if __name__ == "__main__":
 
     user_attribute_map_by_name = get_user_attribute_map_by_name()
     user_attribute_map_by_id   = get_user_attribute_map_by_id()
+    print(f"INFO: found {len(user_attribute_map_by_name) :5} user attributes in model - available via: user_attribute_map_by_name\n")
 
     from ptpython.repl import embed
 

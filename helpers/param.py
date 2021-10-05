@@ -23,7 +23,7 @@ def get_element_user_attributes(elem_id: int) -> dict:
     return user_param_map
 
 
-def ensure_user_parameters() -> dict:
+def ensure_user_parameters(quiet=None) -> dict:
     """
     Ensures that the canonical mapping of user parameters
     according to a single source are set.
@@ -32,7 +32,7 @@ def ensure_user_parameters() -> dict:
     user_profile_path = Path(uc.get_3d_userprofil_path())
     company_user_profile_path = user_profile_path / "company_user_attributes.json"
     if not company_user_profile_path.exists():
-        print(f"Sorry {company_user_profile_path} seems to be missing")
+        print(f"ERROR: Sorry {company_user_profile_path} seems to be missing")
         return {}
     with open(company_user_profile_path) as attr_json:
         cw_attributes = json.load(attr_json)["cw_user_attributes"]
@@ -40,13 +40,15 @@ def ensure_user_parameters() -> dict:
     for attr_name, cw_user_attr_nr in cw_attributes.items():
         if ac.get_user_attribute_name(cw_user_attr_nr) == f"User{cw_user_attr_nr}":
             ac.set_user_attribute_name(cw_user_attr_nr, attr_name)
-            print(f"INFO: ensure_user_parameters: successfully set user attribute: {attr_name}")
+            if not quiet:
+                print(f"INFO: ensure_user_parameters: successfully set user attribute: {attr_name}")
         elif ac.get_user_attribute_name(cw_user_attr_nr) == attr_name:
-            print(f"INFO: ensure_user_parameters: user attribute already set: {attr_name}")
+            if not quiet:
+                print(f"INFO: ensure_user_parameters: user attribute already set: {attr_name}")
             continue
         else:
-            pass
-            print(f"INFO: ensure_user_parameters: user attribute {cw_user_attr_nr} named {attr_name} already in use!")
+            if not quiet:
+                print(f"INFO: ensure_user_parameters: user attribute {cw_user_attr_nr} named {attr_name} already in use!")
     return cw_attributes
 
 
