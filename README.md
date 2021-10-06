@@ -61,7 +61,7 @@
 * Only works within a cw session with the console enabled
 * The console has a strange behaviour around pasting:
   * mouse right-click works for pasting
-  * `Ctrl - v` `Ctrl - Shift - v` do not seem to work for pasting even with paste mode (`F6`) enabled
+  * `Ctrl - v` or `Ctrl - Shift - v` as hotkeys for pasting do not seem to work, even with paste mode (`F6`) enabled
 * The repl in its current version is modal / blocking, meaning you cannot interact with cadwork meaningfully while the 
   repl is active - quit the repl via `sys.exit()` or `rq()`
 * Sometimes (~1%) it crashes cadwork - reason currently unknown
